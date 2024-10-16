@@ -19,7 +19,7 @@ app.use('/api/centers', centerRoutes);
 app.use('/api/sports', sportRoutes);
 
 app.get('/', (req, res) => {
-    res.send('API is running');
+    res.send('API is running on port 5000');
 });
 
 module.exports = app;
