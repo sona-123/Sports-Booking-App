@@ -1,7 +1,8 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 const bookingRoutes = require('./routes/bookingRoutes');
 const centerRoutes = require('./routes/centerRoutes');
@@ -13,6 +14,7 @@ app.use(express.json());
 
 connectDB();
 
+
 // Routes
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/centers', centerRoutes);
@@ -21,5 +23,7 @@ app.use('/api', authRoutes);
 app.get('/', (req, res) => {
     res.send('API is running on port 5000');
 });
+
+
 
 module.exports = app;
