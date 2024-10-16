@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+import Sidebar from './elements/Sidebar';
+import Navbar from './elements/Navbar';
+import Filter from './elements/DateSportFilter'; // Assuming this component exists
+import ScheduleTable from './elements/Schedule'; // Assuming this component exists
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex">
+      <Sidebar />
+      <div className="flex-1 bg-gray-100"> {/* Add a background color for better contrast */}
+        <Navbar />
+        <Filter />
+        <ScheduleTable />
+      </div>
     </div>
   );
 }
